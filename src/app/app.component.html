@@ -1,0 +1,6 @@
+<shop-productListComponent 
+  [products]="productsList"
+  (buttonClick)="onAddToCart($event)"></shop-productListComponent>
+<shop-cartListComponent 
+  [products]="cartList"
+  (buttonClick)="removeProduct($event)"></shop-cartListComponent>
