@@ -1,0 +1,9 @@
+<h3>Cart</h3>
+<div *ngIf="products?.length; else Empty">
+  <p>Total: {{getTotalPrice()}}$</p>
+  <shop-productComponent *ngFor="let product of products; trackBy: trackByName" 
+  [product]=product
+  textButton="Remove"
+  (buttonClick)="buttonClick.emit($event)"></shop-productComponent>
+</div>
+<ng-template #Empty>Cart is Empty</ng-template>
