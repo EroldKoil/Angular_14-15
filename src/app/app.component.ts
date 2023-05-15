@@ -8,6 +8,7 @@ import { Product } from '../core/productListComponent/products.interface';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less'],
+  // почему такой подход выбран для регистрации сервисов?
   providers:  [ ProductsService, CartService ]
 })
 export class AppComponent {
