@@ -2,5 +2,6 @@
 <shop-productComponent *ngFor="let product of products" 
   [product]=product
   textButton="Buy"
-  (buttonClick)="buttonClick.emit($event)">
+  [isCartProduct]="false"
+  (buyProduct)="addToCart($event)">
 </shop-productComponent>

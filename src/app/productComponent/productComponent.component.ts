@@ -10,5 +10,6 @@ import { Product } from '../../core/productListComponent/products.interface'
 export class ProductComponent {
   @Input() product!: Product;
   @Input() textButton!: string;
-  @Output() buttonClick = new EventEmitter<Product>();
+  @Input() isCartProduct!: boolean;
+  @Output() buyProduct = new EventEmitter<Product>();
 }

@@ -12,3 +12,19 @@
 - ProductsService
 - ability to add product to the cart 
 - ability to remove product from the cart 
+
+## [2.0.0] - 2023-05-17
+
+### Added
+
+- add Unavailable product
+- totalCost and totalQuantity into product info
+- add posibility Increase/Decrease products count
+- add posibility remove product type
+- add title
+- add HighlightDirective
+
+
+### Fixed
+
+- Split app by modules

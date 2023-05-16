@@ -1,5 +1,9 @@
 <div class="product">
   <div >Name: {{product.name}}</div>
   <div >Price: {{product.price}}$</div>
-  <button (click)="buttonClick.emit(product)" type="button" class="button">{{textButton}}</button>
+  <button 
+    [disabled]="!product.isAvailable && !isCartProduct" 
+    (click)="buyProduct.emit(product)" 
+    type="button" class="btn btn-primary">
+  {{textButton}}</button>  
 </div>

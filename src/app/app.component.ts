@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
-import { ProductsService } from '../core/productListComponent/productServices';
-import { CartService } from '../core/productListComponent/cartServices';
+import { ProductsService } from '../core/productListComponent/productService';
+import { CartService } from '../core/productListComponent/cartService';
 import { Product } from '../core/productListComponent/products.interface';
 
 @Component({
@@ -11,24 +11,11 @@ import { Product } from '../core/productListComponent/products.interface';
   providers:  [ ProductsService, CartService ]
 })
 export class AppComponent {
-  title = 'shop';
-  productsList: Product[] = [];
-  cartList: Product[] = [];
+  @ViewChild('appTitle') appTitle!: ElementRef<HTMLInputElement>;
 
-  constructor( private productsService: ProductsService, private cartService: CartService ) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.productsList = this.productsService.getProducts();
-    this.cartList = this.cartService.getProducts();
-  }
-
-  onAddToCart(product: Product): void {
-    console.log(`add to card: ${product?.name}`);
-    this.cartService.addToCart(product);
-  }
-
-  removeProduct(product: Product): void {
-    console.log(`remove product: ${product?.name}`);
-    this.cartService.removeProduct(product);
+  ngAfterViewInit(): void {
+    this.appTitle.nativeElement.innerHTML = 'Shop';
   }
 }
