@@ -3,22 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './productListComponent/productListComponent.component';
-import { ProductComponent } from './productComponent/productComponent.component';
-import { CartListComponent } from './cartListComponent/cartListComponent.component';
+import { ProductListModule } from './productListComponent/productListComponent.module';
+import { CartListModule } from './cartListComponent/cartListComponent.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    ProductComponent,
-    CartListComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductListModule,
+    CartListModule,
+    NgbModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  declarations: [AppComponent]
 })
 export class AppModule { }

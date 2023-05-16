@@ -1,5 +1,6 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../core/productListComponent/products.interface';
+import { Component } from '@angular/core';
+import { CartProduct, Cart } from '../../core/productListComponent/products.interface';
+import { CartService } from '../../core/productListComponent/cartService';
 
 @Component({
   selector: 'shop-cartListComponent',
@@ -7,15 +8,32 @@ import { Product } from '../../core/productListComponent/products.interface';
   styleUrls: ['./cartListComponent.component.less']
 })
 
-export class CartListComponent {
-  @Input() products!: Product[];
-  @Output() buttonClick = new EventEmitter<Product>();
+export class CartListComponent {  
+  cart!: Cart;
 
-  trackByName(index: number, product: Product, ): number {
+  constructor(private cartService: CartService) { }
+
+  ngOnInit(){
+    this.cart = this.cartService.getCart();
+  }
+
+  trackByName(index: number, product: CartProduct): number {
     return product.id;
   }
 
-  getTotalPrice(): number{
-    return this.products.reduce((price, product) => price + product.price ,0);
+  onRemoveProduct(product: CartProduct): void {
+    this.cartService.removeProduct(product);
+  }
+
+  onQuantityIncrease(product: CartProduct) {
+    this.cartService.addToCart(product);
+  }
+
+  onQuantityDecrease(product: CartProduct) {
+    this.cartService.quantityDecrease(product);
+  }
+
+  getProducts(): CartProduct[]{
+    return Object.values(this.cart.products);
   }
 }

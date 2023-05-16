@@ -1,6 +1,5 @@
-<shop-productListComponent 
-  [products]="productsList"
-  (buttonClick)="onAddToCart($event)"></shop-productListComponent>
-<shop-cartListComponent 
-  [products]="cartList"
-  (buttonClick)="removeProduct($event)"></shop-cartListComponent>
+<h1 #appTitle class="center"></h1>
+<div class="body">
+  <shop-productListComponent></shop-productListComponent>
+  <shop-cartListComponent></shop-cartListComponent>
+</div>

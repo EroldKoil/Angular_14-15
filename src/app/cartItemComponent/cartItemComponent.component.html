@@ -1,0 +1,20 @@
+<div class="product" highlight>
+  <div >Name: {{product.name}}</div>
+  <div >Price: {{product.price}}$</div>
+  <div >Total price: {{product.price * product.count}}$</div>
+  <div class="counter">
+    <button
+      (click)="quantityDecrease.emit(product)"
+      type="button" class="btn btn-primary">-</button>
+
+    <span class="product-count">{{product.count}}</span>
+
+    <button
+      [disabled]="!product.isAvailable"
+      (click)="quantityIncrease.emit(product)"
+      type="button" class="btn btn-primary">+</button>
+    <button
+      (click)="removeProduct.emit(product)"
+      type="button" class="btn btn-danger marginLeft-20">Remove</button>
+  </div>
+</div>
