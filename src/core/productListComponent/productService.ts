@@ -8,3 +8,4 @@ export class ProductsService {
     return productsListMock
   }
 }
+// Почему вы вынесли папки core, shared за пределы app?
