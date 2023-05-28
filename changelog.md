@@ -28,3 +28,20 @@
 ### Fixed
 
 - Split app by modules
+
+## [3.0.0] - 2023-05-28
+
+### Added
+
+- ConfigOptionsService
+- ConstantsService
+- GeneratorService
+- GeneratorFactory
+- genID generator
+- LocalStorageService
+- FontSizeChangerDirective
+
+
+### Fixed
+
+- fix CartService

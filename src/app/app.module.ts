@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductListModule } from './productListComponent/productListComponent.module';
 import { CartListModule } from './cartListComponent/cartListComponent.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FirstComponentModule } from './firstComponent/firstComponent.module';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     ProductListModule,
     CartListModule,
+    FirstComponentModule,
     NgbModule
   ],
   bootstrap: [AppComponent],

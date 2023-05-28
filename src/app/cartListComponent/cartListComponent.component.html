@@ -1,7 +1,7 @@
 <h3>Cart. 
   {{cart.totalQuantity ? 'Total quantity:' + cart.totalQuantity : ''}}
-  {{cart.totalPrice ? 'Total price:' + cart.totalPrice + '$' : ''}}</h3>
-<div *ngIf="cart.totalPrice > 0; else Empty">
+  {{cart.totalCost ? 'Total price:' + cart.totalCost + '$' : ''}}</h3>
+<div *ngIf="!isEmpty(); else Empty">
   <shop-cartItemComponent *ngFor="let product of getProducts()" 
     (removeProduct)="onRemoveProduct($event)"
     (quantityIncrease)="onQuantityIncrease($event)"

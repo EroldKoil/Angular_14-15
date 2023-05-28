@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CartProduct, Cart } from '../../core/productListComponent/products.interface';
-import { CartService } from '../../core/productListComponent/cartService';
+import { CartProduct, Cart } from '../../core/services/products.interface';
+import { CartService } from '../../core/services/cartService';
 
 @Component({
   selector: 'shop-cartListComponent',
@@ -26,14 +26,18 @@ export class CartListComponent {
   }
 
   onQuantityIncrease(product: CartProduct) {
-    this.cartService.addToCart(product);
+    this.cartService.increaseQuantity(product);
   }
 
   onQuantityDecrease(product: CartProduct) {
-    this.cartService.quantityDecrease(product);
+    this.cartService.decreaseQuantity(product);
   }
 
   getProducts(): CartProduct[]{
     return Object.values(this.cart.products);
+  }
+
+  isEmpty(): boolean {
+    return this.cartService.isEmptyCart();
   }
 }
