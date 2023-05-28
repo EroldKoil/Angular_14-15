@@ -1,5 +1,4 @@
 import { NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common'
 
 import { CartItemComponent } from './cartItemComponent.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -9,7 +8,6 @@ import { SharedModule } from '../../shared/shared.module';
     CartItemComponent,
   ],
   imports: [
-    CommonModule,
     SharedModule
   ],
   providers: [],

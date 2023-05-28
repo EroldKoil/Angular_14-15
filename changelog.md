@@ -45,3 +45,17 @@
 ### Fixed
 
 - fix CartService
+
+## [4.0.0] - 2023-05-28
+
+### Added
+
+- standart pipes for cart-item.component.html
+- add OrderByPipe that works with multiple parameters
+- add OrderByPipe to sort cart list
+- added checkBox and selector
+- added CommonModule, FormsModule into SharedModule
+### Fixed
+
+- fix getProducts to return Observable
+- use SharedModule instead of CommonModule

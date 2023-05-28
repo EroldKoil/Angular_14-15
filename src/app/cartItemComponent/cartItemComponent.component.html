@@ -1,7 +1,7 @@
 <div class="product" highlight>
-  <div >Name: {{product.name}}</div>
-  <div >Price: {{product.price}}$</div>
-  <div >Total price: {{product.price * product.count}}$</div>
+  <div >Name: {{product.name | uppercase}}</div>
+  <div >Price: {{product.price | currency}}</div>
+  <div >Total price: {{product.price * product.count | currency}}</div>
   <div class="counter">
     <button
       (click)="quantityDecrease.emit(product)"

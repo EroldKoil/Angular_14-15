@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { CartProduct, Product, Cart, CartProducts } from './products.interface';
 
@@ -21,8 +22,11 @@ export class CartService {
     return this.cartProducts;
   }
 
-  getProducts(): CartProducts{
-    return this.cartProducts.products;
+  getProducts(): Observable<CartProduct[]> {
+    return new Observable((observer) => {
+      observer.next(Object.values(this.cartProducts.products));
+      observer.complete();
+    });
   }
 
   addProduct(product: Product): void {

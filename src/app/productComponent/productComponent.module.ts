@@ -1,14 +1,14 @@
 import { NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common'
 
 import { ProductComponent } from './productComponent.component';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
   declarations: [
     ProductComponent,
   ],
   imports: [
-    CommonModule
+    SharedModule
   ],
   providers: [],
   exports: [ProductComponent]
