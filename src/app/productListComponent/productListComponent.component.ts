@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../../core/productListComponent/products.interface';
-import { ProductsService } from 'src/core/productListComponent/productService';
-import { CartService } from '../../core/productListComponent/cartService';
+import { Product } from '../../core/services/products.interface';
+import { ProductsService } from 'src/core/services/productService';
+import { CartService } from '../../core/services/cartService';
 @Component({
   selector: 'shop-productListComponent',
   templateUrl: './productListComponent.component.html',
@@ -18,6 +18,6 @@ export class ProductListComponent {
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product)
+    this.cartService.addProduct(product)
   }
 }

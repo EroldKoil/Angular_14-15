@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, SimpleChanges, OnChanges} from '@angular/core';
-import { CartProduct } from '../../core/productListComponent/products.interface'
+import { CartProduct } from '../../core/services/products.interface'
 
 @Component({
   selector: 'shop-cartItemComponent',

@@ -12,7 +12,13 @@ export interface CartProduct extends Product {
 export type CartProducts = {[id: number]: CartProduct}
 
 export interface Cart {
-  totalPrice: number;
+  totalCost: number;
   totalQuantity: number;
   products: CartProducts;
+}
+
+export interface ConfigModel {
+  id?: string;
+  login?: string;
+  email?: string;
 }
